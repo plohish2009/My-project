@@ -1,7 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+// using System;
+// using System.Collections;
+// using System.Collections.Generic;
+// using Unity.VisualScripting;
 //using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ public class Books : MonoBehaviour
             gameObject.SetActive(false);
             counter++;
             Debug.Log(counter);
-            if (counter == 4)
+            if (counter == 1)
             {
                 Destroy(GObject[0]);
             }
