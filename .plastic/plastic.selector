@@ -1,4 +1,0 @@
-repository "My project@unity_600BCCA67CD8E5EC5DE3@cloud"
-  path "/"
-    br "/main"
-    co "/main"
