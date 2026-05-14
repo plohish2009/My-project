@@ -100,22 +100,35 @@ public class Hero : MonoBehaviour
         isGrounded = collider.Length > 1;
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Platform")
-    //     {
-    //        this.gameObject.transform.parent = collision.transform;
-    //     }
-    // }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            // Сохраняем мировую позицию
+            Vector3 worldPosition = transform.position;
+            
+            // Прикрепляем к платформе
+            this.gameObject.transform.parent = collision.transform;
+            
+            // Восстанавливаем мировую позицию
+            transform.position = worldPosition;
+        }
+    }
 
-    // private void OnCollisionExit2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.tag == "Platform")
-    //     {
-
-    //         this.gameObject.transform.parent = null;
-    //     }
-    // }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            // Сохраняем мировую позицию
+            Vector3 worldPosition = transform.position;
+            
+            // Открепляем от платформы
+            this.gameObject.transform.parent = null;
+            
+            // Восстанавливаем мировую позицию
+            transform.position = worldPosition;
+        }
+    }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -9,9 +9,15 @@ public class Circle : MonoBehaviour
 
     [SerializeField]
     private float radius = 2f;
+    
+
+    [SerializeField]
     private float angularSpeed = 2f;
     private float positionX;
     private float positionY;
+
+    
+    [SerializeField]
     private float angle = 0f;
 
 
