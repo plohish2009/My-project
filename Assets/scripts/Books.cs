@@ -9,7 +9,8 @@ public class Books : MonoBehaviour
 {
     public GameObject[] GObject;
     public static int counter = 0;
-    
+    [SerializeField] private AudioSource bookSound;
+
     private void OnTriggerEnter2D(Collider2D collision)
    {
         GObject = GameObject.FindGameObjectsWithTag("door");
@@ -17,6 +18,7 @@ public class Books : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //Destroy(gameObject);
+            bookSound.Play();
             gameObject.SetActive(false);
             counter++;
             Debug.Log(counter);
