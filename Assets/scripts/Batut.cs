@@ -14,7 +14,6 @@ public class Batut : MonoBehaviour
    {
         if(collision.gameObject.CompareTag("Player"))
         {
-            //collision.rigidbody.AddForce(Vector2.up * _force, ForceMode2D.Impulse);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * _force, ForceMode2D.Impulse);
             batytSound.Play();
         }

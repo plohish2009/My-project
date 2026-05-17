@@ -21,7 +21,6 @@ public class Circle : MonoBehaviour
     private float angle = 0f;
 
 
-    // Update is called once per frame
     void Update()
     {
         positionX = center.position.x + Mathf.Cos(angle) * radius;

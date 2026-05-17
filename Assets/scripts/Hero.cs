@@ -11,7 +11,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float speed = 3f;
     public float fastspeed = 7f;
     public float realspeed;
-    [SerializeField] private float jumpForce = 0.1f; // УВЕЛИЧЬТЕ силу прыжка! 0.1f слишком мало
+    [SerializeField] private float jumpForce = 0.1f;
     public bool isGrounded;
     private float horizontalmove = 0f;
 
@@ -51,14 +51,12 @@ public class Hero : MonoBehaviour
             Run();
         }
 
-        // Управление анимацией бега
         anim.SetFloat("movex", Mathf.Abs(horizontalmove));
 
         isGrounded = Physics2D.Linecast(transform.position, grounded.position, layerMask);
 
         anim.SetBool("jump", !isGrounded);
 
-        // Прыжок
         if (isGrounded && Input.GetButtonDown("Jump")) // Используйте GetButtonDown, а не GetButton
         {
             anim.SetBool("jump", true);
@@ -91,7 +89,7 @@ public class Hero : MonoBehaviour
     {
 
 
-        rb.velocity = new Vector2(rb.velocity.x, 0); // Сброс вертикальной скорости для более четкого прыжка
+        rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
         jumpSound.Play();
     }
@@ -102,7 +100,6 @@ public class Hero : MonoBehaviour
         bool wasGrounded = isGrounded;
         isGrounded = collider.Length > 1;
 
-        // Если приземлились, сбрасываем флаг прыжка прямо здесь
         anim.SetBool("onGround", isGrounded);
     }
 

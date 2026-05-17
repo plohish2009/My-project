@@ -1,8 +1,3 @@
-// using System;
-// using System.Collections;
-// using System.Collections.Generic;
-// using Unity.VisualScripting;
-//using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
 public class Books : MonoBehaviour
@@ -17,7 +12,6 @@ public class Books : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Destroy(gameObject);
             bookSound.Play();
             gameObject.SetActive(false);
             counter++;

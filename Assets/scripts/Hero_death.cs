@@ -14,9 +14,7 @@ public class Hero_death : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            //Destroy(gameObject);
             Debug.Log("Игрок убит");
-            //gameObject.transform.position = Teleport_Point;
             gameObject.transform.position = new Vector3(teleport_cords[tracker], teleport_cords[tracker + 1], 0);
             
             deathSound.Play();
